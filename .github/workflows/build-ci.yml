@@ -90,7 +90,7 @@ jobs:
           if [ "${{ inputs.publish-myget-package }}" = "true" ]; then
             echo "Pushing to MyGet..."
             dotnet nuget push "$package" \
-              --source "https://www.myget.org/F/aspectcore/api/v2/package" \
+              --source "https://www.myget.org/F/test-aspectcore/api/v2/package" \
               --api-key ${{ secrets.MYGET_API_TOKEN }} \
               --skip-duplicate || echo "Skipping: Package push failed or already exists."
           else
